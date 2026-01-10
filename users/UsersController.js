@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const adminAuth = require("../middlewares/adminAuth");
 const User = require("./User");
+const bcrypt = require("bcryptjs");
 
 // Create
 router.get("/admin/new", adminAuth, (req, res) => {
