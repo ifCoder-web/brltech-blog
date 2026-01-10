@@ -1,0 +1,45 @@
+<%- include('partials/header'); %>
+<%- include('partials/navbar'); %>
+
+<!-- Banner -->
+<header class="banner bg-body-tertiary">
+    <div class="container pt-5 pb-5 text-center">
+        <h1 class="mb-2">Titulo do blog (nicho)</h1>
+        <span class="text-body-tertiary">. . .</span>
+        <h2 class="fs-5">Subtitulo do blog focado em SEO</h2>
+    </div>
+</header>
+
+<!-- Content -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <nav class="col col-12 col-md-3 mb-4">
+            <h3 class="text-center mb-4">Categorias</h3>
+            <ul class="list-group">
+                <% categories.forEach(category => { %>
+                    <li class="list-group-item">
+                        <a href="/categoria/<%= category.slug %>" class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover stretched-link"><%= category.title %><span class="badge text-bg-secondary ms-2"><%= category.articles.length %></span></a>
+                    </li>
+                <% }) %>
+            </ul>
+        </nav>
+        <div class="col col-md-1"></div>
+        <main class="col col-12 col-md-8">
+
+            <% articles.forEach(article => { %>
+                <div class="card mb-4" style="overflow: hidden">
+                    <img src="<%= article.img %>" class="card-img-top img-fluid" alt="<%= article.alt %>" style="max-height: 350px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= article.title %></h5>
+                        <p class="card-text text-truncate"><%= article.abstract %></p>
+                        <p class="text-body-tertiary">Por <em><%= article.author.nick %></em>, <em>em <%= article.createdAtFormat %></em></p>
+                        <a href="/blog/<%= article.slug %>" class="btn btn-primary stretched-link">Ler mais</a>
+                    </div>
+                </div>
+            <% }) %>
+
+        </main>
+    </div>
+</div>
+
+<%- include('partials/footer'); %>

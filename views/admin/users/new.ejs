@@ -1,0 +1,20 @@
+<%- include('../../partials/header.ejs') -%>
+<%- include('../../partials/navbar.ejs') -%>
+
+  <div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+    <div class="card mt-4">
+      <div class="card-header">
+        <h2>Novo usuario</h2>
+      </div>
+      <div class="card-body">
+        <form action="/users/admin/new" method="post">
+          <input class="form-control mb-2" name="nick" type="text" placeholder="Apelido">
+          <input class="form-control mb-2" name="email" type="email" placeholder="mail@example.com">
+          <input class="form-control mb-2" type="password" name="pass" placeholder="******">       
+          <button class="btn btn-success mt-4" type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<%- include('../../partials/footer') -%>

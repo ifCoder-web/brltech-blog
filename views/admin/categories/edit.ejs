@@ -1,0 +1,29 @@
+<%- include('../../partials/header'); %>
+<%- include('../../partials/navbar'); %>
+
+    <div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+    <div class="card mt-4">
+      <div class="card-header">
+        <h2>Update de categoria</h2>
+      </div>
+      <div class="card-body">
+        <form action="/categories/admin/edit" method="post" onsubmit="preventDef(event, this)">
+          <input class="form-control" name="title" type="text" value="<%= category.title %>">
+          <input type="hidden" name="id" value="<%= category._id %>">
+          <button class="btn btn-success mt-4" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<%- include('../../partials/footer'); %>
+
+<script>
+  function preventDef(event, form){
+    event.preventDefault();
+    var confirm = window.confirm("Deseja realmente atualizar a categoria?");
+    if(confirm){
+      form.submit();
+    }
+  }
+</script>

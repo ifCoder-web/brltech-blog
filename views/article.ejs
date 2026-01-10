@@ -1,0 +1,69 @@
+<%- include('partials/header'); %>
+<%- include('partials/navbar'); %>
+
+<!-- Banner -->
+<header class="banner">
+    <div class="container-fluid pt-4 text-center">
+        <h1 class="mb-2"><%= article.title %></h1>
+        <span>. . .</span>
+        <h2 class="fs-5 mb-4"><%= article.subTitle %></h2>
+        <p class="text-body-tertiary">Por <em><%= article.author.nick %></em> | Atualizado em <em><%= article.createdAtFormat %></em></p>
+    </div>
+    <hr>
+</header>
+
+<!-- Content -->
+<div class="container mt-5 mb-5">
+    <div class="row">
+        
+        <main class="col col-12 col-md-8 brl-article">
+            <!-- Imagem principal -->
+             <figure class="figure" style="width: 100%;">
+                <img src="<%= article.img %>" class="figure-img img-fluid rounded" alt="<%= article.alt %>" style="width: 100%;">
+                <figcaption class="figure-caption"><%= article.alt %></figcaption>
+            </figure>
+            <!-- Conteúdo -->
+            <%- article.body %>
+
+        </main>
+
+        <div class="col col-md-1"></div>
+
+        <nav class="col col-12 col-md-3 mb-4">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>Mais sobre <a href="/categoria/<%= article.category.slug %>" class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover"><%= article.category.title %></a></h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <% category.articles.forEach(article => { %>
+                            <a href="/blog/<%= article.slug %>" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1"><%= article.title %></h5>
+                                </div>
+                                <p class="mb-1 text-truncate"><%= article.abstract %></p>
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>Outras categorias</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <% categories.forEach(category => { %>
+                            <li class="list-group-item">
+                                <a href="/categoria/<%=category.slug %> " class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover stretched-link"><%= category.title %><span class="badge text-bg-secondary ms-2"><%= category.articles.length %></span></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<%- include('partials/footer'); %>

@@ -1,0 +1,50 @@
+/* Padrões BRLTech */
+
+/* Color */
+.brl-color-1 {
+    color: #066699 !important;
+}
+
+i {
+    color: #066699;
+}
+
+/* Center box */
+.brl-center-box {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BG */
+.brl-bg-gradient {
+    background: #02416D;
+    background: linear-gradient(120deg,rgba(2, 65, 109, 1) 0%, rgba(6, 102, 153, 1) 100%);
+}
+
+/* DISPLAY GRID - CATEGORIAS*/
+.brl-grid-pai {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 20px;
+    justify-content: start
+}
+
+/* PADRÕES ARTIGOS */
+.brl-article img {
+    width: 100% !important;
+    border-radius: 0.375rem;
+}
+
+.brl-article p:has(iframe) {
+    aspect-ratio: 16/9 !important;
+}
+
+.brl-article iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0.375rem;
+}
+

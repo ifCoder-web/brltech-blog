@@ -1,0 +1,85 @@
+<%- include('../../partials/header'); %>
+<%- include('../../partials/navbar'); %>
+
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h1 class="fs-3">Atualizar Artigo</h1>
+        </div>
+        <div class="card-body">
+            <form action="/articles/admin/update" method="POST">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="title" class="form-label">Titulo</label>
+                        <input type="text" name="title" class="form-control mb-2" placeholder="Titulo do artigo" value="<%= article.title %>">
+                        <input type="text" name="subTitle" class="form-control" placeholder="Sub titulo" value="<%= article.subTitle %>">
+                    </div>
+                </div>
+                
+                <div class="row mb-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="category">Categoria</label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select mt-2" id="category" name="category" aria-label="Default select example">
+                            <option value="<%= article.category._id %>" selected><%= article.category.title %></option>
+                            <% categories.forEach((category) => { %>
+                                <option value="<%= category._id %>"><%= category.title %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <!-- NEW -->
+                        <a href="/categories/admin/new" class="btn btn-primary">+</a>
+                    </div>
+                </div>
+
+                <hr>
+                
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="img" class="form-label">Imagem de destaque</label>
+                        <input type="text" name="img" class="form-control mb-2" placeholder="URL" value="<%= article.img %>">
+                        <input type="text" name="alt" class="form-control" placeholder="Alt" alue="<%= article.alt %>">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <textarea name="body" class="form-control mt-2" id="article" placeholder="Artigo..."><%= article.body %></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="abstract" class="form-label">Resumo</label>
+                        <textarea name="abstract" class="form-control" cols="20" rows="3"><%= article.abstract %></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <span>Autor: <%= user.nick %></span>
+                        <input type="text" name="author" class="form-control" value="<%= user.id %>" hidden>
+                    </div>
+                </div>
+
+                <!-- Auxiliar -->
+                <input type="hidden" name="oldCategory" value="<%= article.category._id %>">
+                <input type="hidden" name="id" value="<%= article._id %>">
+                <button class="btn btn-success mt-2" type="submit">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../../partials/footer'); %>
+<!-- Tinymce -->
+ <script src="/tinymce/tinymce.min.js"></script>
+ <script>
+    tinymce.init({
+        selector: "#article",
+        license_key: 'gpl',
+        plugins: ["accordion", "anchor", "autolink", "autoresize", "autosave", "charmap", "code", "codesample", "directionality", "emoticons", "fullscreen", "help", "image", "link", "lists", "media", "nonbreaking space", "pagebreak", "preview", "save", "searchreplace", "table", "visualblocks", "visualchars", "wordcount"]
+    })
+ </script>
