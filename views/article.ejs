@@ -16,7 +16,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         
-        <main class="col col-12 col-md-8 brl-article">
+        <main class="col col-12 col-md-8 brl-article shadow-sm">
             <!-- Imagem principal -->
              <figure class="figure" style="width: 100%;">
                 <img src="<%= article.img %>" class="figure-img img-fluid rounded" alt="<%= article.alt %>" style="width: 100%;">
@@ -30,7 +30,7 @@
         <div class="col col-md-1"></div>
 
         <nav class="col col-12 col-md-3 mb-4">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-header text-center">
                     <h5>Mais sobre <a href="/categoria/<%= article.category.slug %>" class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover"><%= article.category.title %></a></h5>
                 </div>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <br>
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-header text-center">
                     <h5>Outras categorias</h5>
                 </div>

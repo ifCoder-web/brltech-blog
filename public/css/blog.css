@@ -1,12 +1,19 @@
 /* Padrões BRLTech */
 
+/* // <weight>: Use a value from 400 to 700
+// <uniquifier>: Use a unique and descriptive class name */
+
+body {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+}
+
 /* Color */
 .brl-color-1 {
     color: #066699 !important;
-}
-
-i {
-    color: #066699;
 }
 
 /* Center box */
@@ -20,8 +27,18 @@ i {
 
 /* BG */
 .brl-bg-gradient {
-    background: #02416D;
-    background: linear-gradient(120deg,rgba(2, 65, 109, 1) 0%, rgba(6, 102, 153, 1) 100%);
+    background: #4424D4;
+    background: linear-gradient(120deg,rgba(68, 36, 212, 1) 0%, rgba(161, 119, 233, 1) 100%);
+}
+
+/* Buttons */
+.btn-primary {
+    border: #4424D4 !important;
+    background: #4424D4 !important;
+}
+.btn-primary:hover {
+    border: #371dac !important;
+    background: #371dac !important;
 }
 
 /* DISPLAY GRID - CATEGORIAS*/
@@ -47,4 +64,3 @@ i {
     height: 100% !important;
     border-radius: 0.375rem;
 }
-

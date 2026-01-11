@@ -13,7 +13,7 @@
 <div class="container mt-5 mb-5">
         <main class="brl-grid-pai" style="width: 100%;">
             <% category.articles.forEach(article => { %>
-                <div class="card mb-4" style="overflow: hidden;">
+                <div class="card mb-4 shadow-sm" style="overflow: hidden;">
                     <img src="<%= article.img %>" class="card-img-top img-fluid" alt="<%= article.alt %>" style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title"><%= article.title %></h5>

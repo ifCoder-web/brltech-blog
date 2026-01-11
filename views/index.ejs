@@ -4,9 +4,9 @@
 <!-- Banner -->
 <header class="banner bg-body-tertiary">
     <div class="container pt-5 pb-5 text-center">
-        <h1 class="mb-2">Titulo do blog (nicho)</h1>
+        <h1 class="mb-2">Blog BRLTech</h1>
         <span class="text-body-tertiary">. . .</span>
-        <h2 class="fs-5">Subtitulo do blog focado em SEO</h2>
+        <h2 class="fs-5">Achados, promoções e dicas sobre os melhores equipamentos eletronicos para computação e segurança</h2>
     </div>
 </header>
 
@@ -15,7 +15,7 @@
     <div class="row">
         <nav class="col col-12 col-md-3 mb-4">
             <h3 class="text-center mb-4">Categorias</h3>
-            <ul class="list-group">
+            <ul class="list-group shadow-sm">
                 <% categories.forEach(category => { %>
                     <li class="list-group-item">
                         <a href="/categoria/<%= category.slug %>" class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover stretched-link"><%= category.title %><span class="badge text-bg-secondary ms-2"><%= category.articles.length %></span></a>
@@ -27,7 +27,7 @@
         <main class="col col-12 col-md-8">
 
             <% articles.forEach(article => { %>
-                <div class="card mb-4" style="overflow: hidden">
+                <div class="card mb-4 shadow-sm" style="overflow: hidden">
                     <img src="<%= article.img %>" class="card-img-top img-fluid" alt="<%= article.alt %>" style="max-height: 350px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title"><%= article.title %></h5>

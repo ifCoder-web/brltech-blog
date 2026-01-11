@@ -166,7 +166,7 @@ app.get("/blog/:slug", (req, res) => {
 app.get("/categoria/:slug", (req, res) => {
   const slug = req.params.slug
 
-  Categories.findOne({ slug: slug }).populate("articles").sort({_id: -1})
+  Categories.findOne({ slug: slug }).populate({path: "articles", populate: {path: "author"}}).sort({_id: -1})
     .then(category => {
       res.render("categories", {
         category: category
