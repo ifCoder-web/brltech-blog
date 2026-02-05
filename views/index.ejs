@@ -4,9 +4,9 @@
 <!-- Banner -->
 <header class="banner bg-body-tertiary">
     <div class="container pt-5 pb-5 text-center">
-        <h1 class="mb-2">Blog BRLTech</h1>
+        <h1 class="mb-2 fw-light">Blog BRLTech</h1>
         <span class="text-body-tertiary">. . .</span>
-        <h2 class="fs-5">Achados, promoções e dicas sobre os melhores equipamentos eletronicos para computação e segurança</h2>
+        <h2 class="fs-5 lead text-body-secondary">Achados, promoções e dicas sobre os melhores equipamentos eletronicos para computação e segurança</h2>
     </div>
 </header>
 
@@ -14,7 +14,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <nav class="col col-12 col-md-3 mb-4">
-            <h3 class="text-center mb-4">Categorias</h3>
+            <h3 class="text-center mb-4 fw-light">Categorias</h3>
             <ul class="list-group shadow-sm">
                 <% categories.forEach(category => { %>
                     <li class="list-group-item">
@@ -30,7 +30,7 @@
                 <div class="card mb-4 shadow-sm" style="overflow: hidden">
                     <img src="<%= article.img %>" class="card-img-top img-fluid" alt="<%= article.alt %>" style="max-height: 350px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title"><%= article.title %></h5>
+                        <h4 class="card-title fw-light"><%= article.title %></h4>
                         <p class="card-text text-truncate"><%= article.abstract %></p>
                         <p class="text-body-tertiary">Por <em><%= article.author.nick %></em>, <em>em <%= article.createdAtFormat %></em></p>
                         <a href="/blog/<%= article.slug %>" class="btn btn-primary stretched-link">Ler mais</a>
@@ -40,6 +40,16 @@
 
         </main>
     </div>
+</div>
+
+<!-- CONTATO -->
+<div id="contato" class="bg-body-secondary text-center" style="padding: 40px 10px 40px 10px">
+    <h3 class="fs-1 fw-light">Entre em Contato com a Gente pelo WhatsApp</h3>
+    <p class="lead text-body-secondary">Atendimento em Goiânia - GO, Aparecida de Goiânia - GO, Trindade - GO, Senador Canedo - GO, Aragoiânia - GO e Região.</p>
+    <p class="mt-4"><a class="btn btn-primary btn-lg btn-wpp" href="https://wa.me/message/3AFDV54LZ5NKN1" target="_blank"><i class="bi bi-whatsapp"></i> (62) 9 9669-1186</a></p>
+    <span class="text-body-secondary">Peça um <strong>orçamento sem compromisso!</strong> Responderemos em instantes.</span>
+    <p class="mb-4">. . .</p>
+    <p>Email: eng.if@outlook.com.br | CNPJ: 64.589.483/0001-94</p>
 </div>
 
 <%- include('partials/footer'); %>
