@@ -178,6 +178,10 @@ app.get("/categoria/:slug", (req, res) => {
     })
 })
 
+app.get("/confirm", (req, res) => {
+  res.render("confirm");
+})
+
 app.get("/categoria", (req, res) => {
   res.redirect("/");
 })

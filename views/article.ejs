@@ -77,4 +77,16 @@
     <p>Email: eng.if@outlook.com.br | CNPJ: 64.589.483/0001-94</p>
 </div>
 
+<!-- SCRIPTS -->
+<script>
+    // Redirect pagina de confirmação
+    document.querySelectorAll(".btn-wpp").forEach(btn => {
+        btn.addEventListener('click', function(){
+            setTimeout(() => {
+                window.location.href = "/confirm"
+            }, 500);
+        })
+    })
+</script>
+
 <%- include('partials/footer'); %>

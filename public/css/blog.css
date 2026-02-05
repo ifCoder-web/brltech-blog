@@ -1,35 +1,21 @@
-/* Padrões BRLTech */
-
-/* // <weight>: Use a value from 400 to 700
-// <uniquifier>: Use a unique and descriptive class name */
-
-body {
-  font-family: "Google Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "GRAD" 0;
+/* DISPLAY GRID - CATEGORIAS*/
+.brl-grid-pai {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 20px;
+    justify-content: start
 }
+
+/* Padrões BRLTech */
 
 /* Color */
 .brl-color-1 {
-    color: #066699 !important;
+    color: #4424D4 !important;
 }
-
-/* Center box */
-.brl-center-box {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* BG */
-.brl-bg-gradient {
-    background: #4424D4;
-    background: linear-gradient(120deg,rgba(68, 36, 212, 1) 0%, rgba(161, 119, 233, 1) 100%);
-}
+/* 
+i {
+    color: #4424D4;
+} */
 
 /* Buttons */
 .btn-primary {
@@ -41,26 +27,33 @@ body {
     background: #371dac !important;
 }
 
-/* DISPLAY GRID - CATEGORIAS*/
-.brl-grid-pai {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    gap: 20px;
-    justify-content: start
+/* Center box */
+.brl-center-box {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* PADRÕES ARTIGOS */
-.brl-article img {
-    width: 100% !important;
-    border-radius: 0.375rem;
+    .brl-center-box_ml {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .brl-grid-ml {
+        display: grid; /* Transforma em contêiner grid */
+        grid-template-columns: 1fr 1fr; /* Cria 2 colunas de largura igual */
+        gap: 10px; /* Espaçamento entre as células */
+    }
+
+/* BG */
+.brl-bg-gradient {
+    background: #4424D4;
+    background: linear-gradient(120deg,rgba(68, 36, 212, 1) 0%, rgba(161, 119, 233, 1) 100%);
 }
 
-.brl-article p:has(iframe) {
-    aspect-ratio: 16/9 !important;
-}
-
-.brl-article iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 0.375rem;
-}
+    .brl-bg-ml {
+        background-color: #FFE600;
+    }
